@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Genomika: tibbiyotning kelajagini o‘zgartirayotgan yo‘nalish",
+    "category": "Tadqiqotlar",
+    "text": "Genetik ma’lumotlar kasalliklarni erta aniqlash imkoniyatlarini kengaytirmoqda.",
+    "content": "Genomika inson genlari va ularning o‘zaro ta’sirini o‘rganuvchi fan bo‘lib, zamonaviy tibbiyotda tobora muhim o‘rin egallamoqda.\n\nGenetik tahlillar ayrim irsiy kasalliklar xavfini erta baholashga yordam beradi. Shifokorlar bu ma’lumotlardan bemorga mos profilaktika va davolash rejasini tanlashda foydalanishlari mumkin.\n\nGenomik ma’lumotlardan foydalanishda maxfiylik, rozilik va natijalarni mutaxassis bilan to‘g‘ri talqin qilish muhim.",
+    "date": "25.11.2026",
+    "status": "Faol"
+  },
+  {
+    "id": 2,
+    "title": "Hujayra texnologiyalari va yangi davolash usullari",
+    "category": "Biotexnologiya",
+    "text": "Laboratoriya yutuqlari regenerativ tibbiyot uchun yangi istiqbollarni ochmoqda.",
+    "content": "Hujayra texnologiyalari tirik hujayralarni o‘rganish va ulardan tibbiy tadqiqotlarda foydalanishga asoslanadi.\n\nRegenerativ tibbiyot shikastlangan to‘qimalarni tiklash imkoniyatlarini izlaydi. Hujayra terapiyalarining ko‘plab yo‘nalishlari hanuz klinik tadqiqot bosqichida bo‘lib, ularning xavfsizligi va samaradorligi sinchiklab baholanadi.\n\nYangi usullarni qo‘llash faqat tegishli klinik dalillar va tibbiy mutaxassis nazorati bilan amalga oshirilishi kerak.",
+    "date": "24.11.2026",
+    "status": "Faol"
+  },
+  {
+    "id": 3,
+    "title": "Raqamli diagnostika: aniqlik va tezkorlik",
+    "category": "Tibbiyot",
+    "text": "Ma’lumotlar tahlili va aqlli tizimlarning o‘rni tobora ortib bormoqda.",
+    "content": "Raqamli diagnostika tibbiy tasvirlar, laboratoriya natijalari va boshqa ma’lumotlarni tahlil qilish vositalaridan foydalanadi.\n\nBunday tizimlar shifokorga ma’lumotlarni tartiblash va ayrim belgilarni aniqlashda ko‘maklashishi mumkin, ammo tashxis va davolash bo‘yicha yakuniy qarorni malakali tibbiyot mutaxassisi qabul qiladi.\n\nAniqlikni oshirish uchun ma’lumotlar sifati, algoritmlarni sinovdan o‘tkazish va bemor maxfiyligini himoyalash zarur.",
+    "date": "23.11.2026",
+    "status": "Faol"
+  },
+  {
+    "id": 4,
+    "title": "Molekulyar biologiya: tiriklik sirlarini anglash",
+    "category": "Biotibbiyot",
+    "text": "Molekulyar darajadagi bilimlar zamonaviy tibbiyotning muhim asosidir.",
+    "content": "Molekulyar biologiya hujayralardagi DNK, RNK va oqsillar kabi tuzilmalar hamda ularning vazifalarini o‘rganadi.\n\nBu bilimlar hujayralar qanday ishlashi, ayrim kasalliklar qanday rivojlanishi va yangi dori vositalarini izlash jarayonlarini tushunishga yordam beradi.\n\nLaboratoriya kashfiyotlarini kundalik tibbiyotga tatbiq etish uchun takroriy tadqiqotlar, klinik sinovlar va mustaqil ekspert bahosi talab etiladi.",
+    "date": "22.11.2026",
+    "status": "Faol"
+  }
+]

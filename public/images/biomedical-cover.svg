@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" fill="none">
+  <defs>
+    <linearGradient id="background" x1="120" y1="80" x2="1300" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102B46"/>
+      <stop offset=".55" stop-color="#1C5870"/>
+      <stop offset="1" stop-color="#76B9B7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(500 0 0 440 920 420)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B0ECE1" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#B0ECE1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cell" x1="628" y1="243" x2="1002" y2="647" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D2FFF1" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#86D9D0" stop-opacity=".2"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" stroke="#D8F4F2" stroke-opacity=".09"/>
+    </pattern>
+    <filter id="blur" x="0" y="0" width="1400" height="900" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1400v900H0z"/>
+  <path fill="url(#glow)" d="M0 0h1400v900H0z"/>
+  <path fill="url(#grid)" d="M0 0h1400v900H0z"/>
+  <circle cx="1020" cy="650" r="190" fill="#7ED7C7" fill-opacity=".15" filter="url(#blur)"/>
+  <g stroke="#D6F4E9" stroke-opacity=".42">
+    <circle cx="800" cy="450" r="252"/>
+    <circle cx="800" cy="450" r="310" stroke-dasharray="3 12"/>
+    <ellipse cx="800" cy="450" rx="340" ry="116" transform="rotate(-32 800 450)"/>
+    <ellipse cx="800" cy="450" rx="340" ry="116" transform="rotate(32 800 450)"/>
+  </g>
+  <circle cx="800" cy="450" r="166" fill="url(#cell)" fill-opacity=".18" stroke="#E3FFF4" stroke-opacity=".78" stroke-width="2"/>
+  <circle cx="800" cy="450" r="82" fill="#C5F5E9" fill-opacity=".14" stroke="#D7FFF1" stroke-opacity=".8" stroke-width="2"/>
+  <circle cx="800" cy="450" r="31" fill="#C9F7E9" fill-opacity=".78"/>
+  <g stroke="#D9FFF1" stroke-width="2">
+    <path d="M800 369v-64m0 290v-64m-81-81h-64m290 0h-64M743 393l-45-45m204 204-45-45m0-114 45-45M698 552l45-45"/>
+  </g>
+  <g fill="#D9FFF1">
+    <circle cx="800" cy="293" r="12"/><circle cx="800" cy="607" r="12"/>
+    <circle cx="643" cy="450" r="12"/><circle cx="957" cy="450" r="12"/>
+    <circle cx="690" cy="340" r="9"/><circle cx="910" cy="560" r="9"/>
+    <circle cx="910" cy="340" r="9"/><circle cx="690" cy="560" r="9"/>
+  </g>
+  <g stroke="#BDEDE5" stroke-opacity=".25">
+    <path d="M0 760h440M980 150h420M1100 760h300"/>
+    <circle cx="1200" cy="260" r="82"/><circle cx="1200" cy="260" r="112"/>
+    <circle cx="210" cy="240" r="52"/><circle cx="210" cy="240" r="79"/>
+  </g>
+</svg>

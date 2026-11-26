@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biotibbiyot - Admin panel</title>
+  <link rel="stylesheet" href="/admin.css?v=5">
+  <link rel="stylesheet" href="/polish.css?v=7">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Saytga qaytish">
+      <span class="brand-mark">+</span>
+      <span><strong>BIOTIBBIYOT</strong><small>ADMIN PANEL</small></span>
+    </a>
+    <nav class="side-nav" aria-label="Admin navigatsiya">
+      <button class="nav-item active" data-view="dashboard"><span>⌂</span> Boshqaruv</button>
+      <button class="nav-item" data-view="articles"><span>▤</span> Maqolalar</button>
+      <button class="nav-item" data-view="media"><span>▧</span> Sayt rasmlari</button>
+      <button class="nav-item" data-view="subscribers"><span>♧</span> Obunachilar</button>
+      <button class="nav-item" data-view="settings"><span>⚙</span> Sozlamalar</button>
+    </nav>
+    <form action="/admin/logout" method="post"><button class="back-link" type="submit">← Chiqish</button></form>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Menyuni ochish">☰</button>
+      <div>
+        <p>Salom, administrator</p>
+        <h1 id="pageTitle">Boshqaruv paneli</h1>
+      </div>
+      <div class="admin-profile"><span>A</span><div><strong>Admin</strong><small>Boshqaruvchi</small></div></div>
+    </header>
+
+    <section class="view active" id="dashboardView">
+      <div class="stats">
+        <article class="stat-card"><div class="stat-icon blue">▤</div><div><small>Jami maqolalar</small><strong id="articleCount">4</strong></div></article>
+        <article class="stat-card"><div class="stat-icon green">♧</div><div><small>Obunachilar</small><strong id="subscriberCount">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon orange">◉</div><div><small>Bugungi ko'rishlar</small><strong>—</strong></div></article>
+        <article class="stat-card"><div class="stat-icon violet">↗</div><div><small>Oylik o'sish</small><strong>—</strong></div></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading"><div><small>STATISTIKA</small><h2>Ko'rishlar dinamikasi</h2></div><select><option>So'nggi 7 kun</option></select></div>
+          <div class="chart-empty">Ko‘rishlar analitikasi ulanmagan</div>
+        </article>
+
+        <article class="panel recent-panel">
+          <div class="panel-heading"><div><small>OXIRGI</small><h2>So'nggi maqolalar</h2></div></div>
+          <div id="recentArticles" class="recent-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="articlesView">
+      <div class="panel">
+        <div class="panel-heading">
+          <div><small>KONTENT</small><h2>Maqolalar boshqaruvi</h2></div>
+          <button class="primary-btn" id="newArticle">+ Yangi maqola</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Maqola</th><th>Kategoriya</th><th>Holat</th><th>Sana</th><th></th></tr></thead>
+            <tbody id="articleTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="mediaView">
+      <div class="media-intro">
+        <div><small>VIZUAL KONTENT</small><h2>Sayt rasmlari</h2><p>Bu yerdagi rasmlar saytda darhol yangilanadi. Maqola rasmini alohida maqolani tahrirlash oynasidan almashtiring.</p></div>
+      </div>
+      <div class="media-grid">
+        <article class="media-card" data-media-key="hero" data-default-src="/images/biomedical-cover.svg">
+          <div class="media-preview" data-media-key="hero"><img alt="Bosh sahifa katta rasmi"></div>
+          <div class="media-info"><small>BOSH SAHIFA</small><h3>Asosiy katta rasm</h3><p>Bosh sahifaning yuqorisidagi katta ilmiy rasm.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+        <article class="media-card" data-media-key="research">
+          <div class="media-preview media-preview--research" data-media-key="research"><img alt="Ilmiy bo‘lim foni"></div>
+          <div class="media-info"><small>ILMGA E'TIBOR</small><h3>Bo‘lim foni</h3><p>Ilmiy yondashuv haqidagi to‘q rangli bo‘lim foni.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+        <article class="media-card" data-media-key="cover-research">
+          <div class="media-preview media-preview--research" data-media-key="cover-research"><img alt="Tadqiqotlar maqolalari standart muqovasi"></div>
+          <div class="media-info"><small>TADQIQOTLAR</small><h3>Standart maqola muqovasi</h3><p>Maqolada alohida rasm berilmasa, shu muqova ishlatiladi.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+        <article class="media-card" data-media-key="cover-biotech">
+          <div class="media-preview media-preview--biotech" data-media-key="cover-biotech"><img alt="Biotexnologiya maqolalari standart muqovasi"></div>
+          <div class="media-info"><small>BIOTEXNOLOGIYA</small><h3>Standart maqola muqovasi</h3><p>Maqolada alohida rasm berilmasa, shu muqova ishlatiladi.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+        <article class="media-card" data-media-key="cover-medicine">
+          <div class="media-preview media-preview--medicine" data-media-key="cover-medicine"><img alt="Tibbiyot maqolalari standart muqovasi"></div>
+          <div class="media-info"><small>TIBBIYOT</small><h3>Standart maqola muqovasi</h3><p>Maqolada alohida rasm berilmasa, shu muqova ishlatiladi.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+        <article class="media-card" data-media-key="cover-biomed">
+          <div class="media-preview media-preview--biomed" data-media-key="cover-biomed"><img alt="Biotibbiyot maqolalari standart muqovasi"></div>
+          <div class="media-info"><small>BIOTIBBIYOT</small><h3>Standart maqola muqovasi</h3><p>Maqolada alohida rasm berilmasa, shu muqova ishlatiladi.</p>
+            <label class="file-picker">Rasm tanlash<input type="file" data-media-file accept="image/jpeg,image/png,image/webp"></label>
+            <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+            <div class="media-actions"><button class="primary-btn" data-save-media disabled>Saqlash</button><button class="secondary-btn" data-reset-media hidden>Standart rasm</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="subscribersView">
+      <div class="panel">
+        <div class="panel-heading"><div><small>AUDIYENS</small><h2>Obunachilar</h2></div><span class="badge" id="subscriberBadge">0 ta</span></div>
+        <div class="subscriber-list" id="subscriberList"></div>
+      </div>
+    </section>
+
+    <section class="view" id="settingsView">
+      <div class="panel settings-panel">
+        <div class="panel-heading"><div><small>SOZLAMALAR</small><h2>Tizim sozlamalari</h2></div></div>
+        <label>Sayt nomi<input id="siteName" value="BIOTIBBIYOT"></label>
+        <label>Administrator elektron pochtasi<input id="adminEmail" type="email" value="admin@biotibbiyot.uz"></label>
+        <label class="toggle-row"><span>Yangi maqolalarni moderatsiyadan o'tkazish</span><input type="checkbox" checked></label>
+        <button class="primary-btn" id="saveSettings">Sozlamalarni saqlash</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="articleDialog">
+    <form id="articleForm" method="dialog">
+      <div class="dialog-heading"><div><small>MAQOLA</small><h2 id="dialogTitle">Yangi maqola</h2></div><button type="button" class="close-btn" id="closeDialog">×</button></div>
+      <input type="hidden" id="articleId">
+      <label>Maqola nomi<input id="articleTitle" required></label>
+      <label>Kategoriya<select id="articleCategory"><option value="Biotibbiyot">Biotibbiyot</option><option value="Tibbiyot">Tibbiyot</option><option value="Tadqiqotlar">Tadqiqotlar</option><option value="Biotexnologiya">Biotexnologiya</option></select></label>
+      <label>Qisqa tavsif<textarea id="articleText" rows="4" required></textarea></label>
+      <label>To‘liq maqola matni<textarea id="articleContent" rows="8" required></textarea></label>
+      <label>Maqola rasmi<input id="articleImage" type="file" accept="image/jpeg,image/png,image/webp"></label>
+      <small class="upload-hint">JPG, PNG yoki WebP • 1.5 MB gacha</small>
+      <div class="image-preview" id="imagePreview"><span>Rasm tanlanmagan</span></div>
+      <button class="primary-btn" type="submit">Saqlash</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/admin.js?v=7"></script>
+</body>
+</html>

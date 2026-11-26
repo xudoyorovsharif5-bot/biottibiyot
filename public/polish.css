@@ -1,0 +1,758 @@
+:root {
+  --navy: #102b46;
+  --blue: #287c98;
+  --cyan: #80d0cc;
+  --ink: #1b2e3e;
+  --muted: #718191;
+  --line: #e3eaee;
+  --soft: #f4f8fa;
+}
+
+html {
+  scroll-padding-top: 110px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #65b9c5;
+  outline-offset: 3px;
+}
+
+.site-header {
+  box-shadow: 0 7px 24px #102b4608;
+}
+
+.header-inner {
+  gap: clamp(12px, 2vw, 30px);
+}
+
+.main-nav a {
+  position: relative;
+  padding: 10px 0;
+}
+
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--cyan);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+.hero {
+  padding-top: clamp(48px, 7vw, 82px);
+  padding-bottom: clamp(46px, 6vw, 72px);
+}
+
+.hero h1 {
+  max-width: 650px;
+  line-height: 1.04;
+}
+
+.hero-visual {
+  height: clamp(330px, 36vw, 440px);
+  border-radius: 18px;
+  background: #153f58;
+  box-shadow: 0 25px 65px #102b4620;
+}
+
+.hero-image {
+  background-image: linear-gradient(110deg, #0e2c4766, #0e2c4700 80%), url("/images/biomedical-cover.svg");
+  transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.hero-image.uploaded-media {
+  background-size: auto, contain;
+  background-position: 0 0, center;
+  background-repeat: no-repeat;
+}
+
+.hero-visual:hover .hero-image.uploaded-media {
+  transform: none;
+}
+
+.image-one {
+  background-image: linear-gradient(0deg, #0d2c4660, transparent 65%), radial-gradient(circle at 70% 22%, #6bb5b4 0, transparent 36%), linear-gradient(135deg, #153756, #286e83);
+}
+
+.image-two {
+  background-image: linear-gradient(0deg, #0d2c4660, transparent 65%), radial-gradient(circle at 70% 22%, #c4b8ea 0, transparent 38%), linear-gradient(135deg, #363763, #788bbd);
+}
+
+.image-three {
+  background-image: linear-gradient(0deg, #0d2c4660, transparent 65%), radial-gradient(circle at 70% 22%, #9dd8e1 0, transparent 38%), linear-gradient(135deg, #174864, #347e9e);
+}
+
+.image-four {
+  background-image: linear-gradient(0deg, #0d2c4660, transparent 65%), radial-gradient(circle at 70% 22%, #9bd5bb 0, transparent 38%), linear-gradient(135deg, #214b49, #4f937d);
+}
+
+.hero-visual:hover .hero-image {
+  transform: scale(1.035);
+}
+
+.hero-label,
+.hero-stat {
+  z-index: 1;
+}
+
+.hero-orbit {
+  pointer-events: none;
+}
+
+.ticker {
+  background: linear-gradient(90deg, #f1f7f8, #f7fafb);
+}
+
+.content-section {
+  padding-top: clamp(58px, 7vw, 82px);
+  padding-bottom: clamp(64px, 8vw, 96px);
+}
+
+.section-heading h2 {
+  font-size: clamp(29px, 3.2vw, 38px);
+}
+
+.category-row {
+  gap: 9px;
+  margin: 30px 0 26px;
+}
+
+.category {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.article-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e6edf0;
+  border-radius: 13px;
+  box-shadow: 0 5px 20px #102b4607;
+}
+
+.article-card[hidden] {
+  display: none;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px #102b4615;
+}
+
+.chart-empty,
+.empty-admin {
+  display: grid;
+  min-height: 210px;
+  place-items: center;
+  color: #8796a1;
+  font-size: 12px;
+}
+
+.empty-admin {
+  min-height: 120px;
+  margin: 0;
+  border: 1px dashed var(--line);
+  border-radius: 9px;
+}
+
+.article-image {
+  height: 218px;
+}
+
+.article-tag {
+  border-radius: 999px;
+  padding: 8px 11px;
+  letter-spacing: .8px;
+}
+
+.article-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 21px 21px 23px;
+}
+
+.article-body h3 {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.article-body p {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.read-link {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 11px;
+}
+
+.custom-article-image {
+  isolation: isolate;
+  background-size: cover;
+}
+
+.custom-article-image img,
+.detail-image > img {
+  object-fit: contain;
+  background: #dcebf0;
+}
+
+.custom-article-image::before,
+.detail-image.cover-research::before,
+.detail-image.cover-biotech::before,
+.detail-image.cover-medicine::before,
+.detail-image.cover-biomed::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 145px;
+  height: 145px;
+  border: 1px solid #ffffff62;
+  border-radius: 50%;
+  box-shadow: 0 0 0 19px #ffffff12, 0 0 0 42px #ffffff0b;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.custom-article-image::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #e4fffae0;
+  font: 200 94px/1 "Segoe UI Symbol", sans-serif;
+  content: "✣";
+  transform: translate(-50%, -50%);
+  text-shadow: 0 8px 28px #102b4655;
+}
+
+.cover-research {
+  background: radial-gradient(circle at 70% 22%, #6bb5b4 0, transparent 36%), linear-gradient(135deg, #153756, #286e83);
+}
+
+.cover-biotech {
+  background: radial-gradient(circle at 70% 22%, #c4b8ea 0, transparent 38%), linear-gradient(135deg, #363763, #788bbd);
+}
+
+.cover-biotech::after {
+  content: "⌘";
+}
+
+.cover-medicine {
+  background: radial-gradient(circle at 70% 22%, #9dd8e1 0, transparent 38%), linear-gradient(135deg, #174864, #347e9e);
+}
+
+.cover-medicine::after {
+  content: "+";
+  font-family: "DM Sans", sans-serif;
+}
+
+.cover-biomed {
+  background: radial-gradient(circle at 70% 22%, #9bd5bb 0, transparent 38%), linear-gradient(135deg, #214b49, #4f937d);
+}
+
+.cover-biomed::after {
+  content: "◉";
+  font-size: 82px;
+}
+
+.detail-image.cover-research,
+.detail-image.cover-biotech,
+.detail-image.cover-medicine,
+.detail-image.cover-biomed {
+  position: relative;
+  background-size: cover;
+}
+
+.detail-image.cover-research::after,
+.detail-image.cover-biotech::after,
+.detail-image.cover-medicine::after,
+.detail-image.cover-biomed::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #e4fffae0;
+  font: 200 125px/1 "Segoe UI Symbol", sans-serif;
+  content: "✣";
+  transform: translate(-50%, -50%);
+}
+
+.detail-image.cover-biotech::after {
+  content: "⌘";
+}
+
+.detail-image.cover-medicine::after {
+  content: "+";
+  font-family: "DM Sans", sans-serif;
+}
+
+.detail-image.cover-biomed::after {
+  content: "◉";
+}
+
+.empty-state {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.research-band {
+  position: relative;
+  background: radial-gradient(ellipse at 82% 50%, #28617b 0, transparent 42%), linear-gradient(115deg, #102b46, #173c58);
+}
+
+.research-inner {
+  min-height: 350px;
+}
+
+.newsletter {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding: 46px;
+  border: 1px solid #e5edf0;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f5f9fa, #fff);
+}
+
+.newsletter h2 {
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.email-row input {
+  border-radius: 8px;
+}
+
+.email-row .btn {
+  border-radius: 8px;
+}
+
+.footer {
+  background: linear-gradient(110deg, #0b2034, #102d45);
+}
+
+.article-detail {
+  border-radius: 16px;
+}
+
+.detail-image {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.detail-image > img {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar {
+  background: linear-gradient(175deg, #10283f, #123650);
+}
+
+.sidebar > form {
+  margin-top: auto;
+}
+
+.sidebar .back-link {
+  margin-top: 0;
+}
+
+.nav-item {
+  border-radius: 9px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.nav-item:hover {
+  transform: translateX(2px);
+}
+
+.topbar {
+  box-shadow: 0 5px 20px #102b4606;
+}
+
+.stat-card,
+.panel {
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #102b4606;
+}
+
+.stat-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #102b4610;
+}
+
+.primary-btn {
+  border-radius: 8px;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.primary-btn:hover {
+  background: #245c78;
+  transform: translateY(-1px);
+}
+
+dialog {
+  border-radius: 14px;
+}
+
+.media-intro {
+  margin-bottom: 20px;
+}
+
+.media-intro small,
+.media-info > small:first-child {
+  color: #70a0b1;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.media-intro h2 {
+  margin: 6px 0;
+  font-size: 23px;
+}
+
+.media-intro p,
+.media-info p {
+  color: #7c8b97;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.media-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 20px #102b4606;
+}
+
+.media-preview {
+  position: relative;
+  display: grid;
+  min-height: 185px;
+  overflow: hidden;
+  place-items: center;
+  background: linear-gradient(135deg, #173b56, #287c98);
+}
+
+.media-preview img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #dcebf0;
+}
+
+.media-preview--research {
+  background: radial-gradient(circle at 70% 22%, #6bb5b4 0, transparent 36%), linear-gradient(135deg, #153756, #286e83);
+}
+
+.media-preview--biotech {
+  background: radial-gradient(circle at 70% 22%, #c4b8ea 0, transparent 38%), linear-gradient(135deg, #363763, #788bbd);
+}
+
+.media-preview--medicine {
+  background: radial-gradient(circle at 70% 22%, #9dd8e1 0, transparent 38%), linear-gradient(135deg, #174864, #347e9e);
+}
+
+.media-preview--biomed {
+  background: radial-gradient(circle at 70% 22%, #9bd5bb 0, transparent 38%), linear-gradient(135deg, #214b49, #4f937d);
+}
+
+.media-preview--research:not(.has-custom-image)::before,
+.media-preview--biotech:not(.has-custom-image)::before,
+.media-preview--medicine:not(.has-custom-image)::before,
+.media-preview--biomed:not(.has-custom-image)::before {
+  width: 110px;
+  height: 110px;
+  border: 1px solid #ffffff62;
+  border-radius: 50%;
+  box-shadow: 0 0 0 16px #ffffff12, 0 0 0 34px #ffffff0b;
+  content: "";
+}
+
+.media-preview--research:not(.has-custom-image)::after,
+.media-preview--biotech:not(.has-custom-image)::after,
+.media-preview--medicine:not(.has-custom-image)::after,
+.media-preview--biomed:not(.has-custom-image)::after {
+  position: absolute;
+  color: #e4fffae0;
+  font: 200 68px/1 "Segoe UI Symbol", sans-serif;
+  content: "✣";
+  text-shadow: 0 8px 28px #102b4655;
+}
+
+.media-preview--biotech:not(.has-custom-image)::after { content: "⌘"; }
+.media-preview--medicine:not(.has-custom-image)::after { content: "+"; }
+.media-preview--biomed:not(.has-custom-image)::after { content: "◉"; }
+
+.media-info {
+  padding: 18px;
+}
+
+.media-info h3 {
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+
+.media-info p {
+  min-height: 35px;
+  margin: 8px 0 14px;
+}
+
+.file-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #dbe5e9;
+  border-radius: 7px;
+  color: #315d70;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.file-picker:focus-within {
+  outline: 3px solid #65b9c5;
+  outline-offset: 2px;
+}
+
+.file-picker input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.media-info .upload-hint {
+  margin-top: 7px;
+}
+
+.media-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.media-actions .secondary-btn {
+  padding: 8px 11px;
+  border: 1px solid #dbe5e9;
+  border-radius: 7px;
+  background: white;
+  color: #526977;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.media-actions [hidden] {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .brand-mark svg {
+    width: 24px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: .5px;
+  }
+
+  .brand-name small {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .languages {
+    gap: 1px;
+    padding: 3px;
+  }
+
+  .lang {
+    padding: 6px 5px;
+    font-size: 9px;
+  }
+
+  .icon-btn,
+  .menu-toggle {
+    padding: 5px;
+  }
+
+  .article-grid {
+    gap: 16px;
+  }
+
+  .article-image {
+    height: 185px;
+  }
+
+  .newsletter {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding: 25px 20px;
+  }
+
+  .research-inner {
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    width: calc(100% - 28px);
+  }
+
+  .article-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .article-image {
+    height: 220px;
+  }
+
+  .article-body {
+    padding: 19px;
+  }
+
+  .hero-visual {
+    height: 280px;
+  }
+
+  .newsletter {
+    border-radius: 12px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-card {
+    min-width: 0;
+    gap: 7px;
+    padding: 9px;
+  }
+
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  .stat-card > div:last-child {
+    min-width: 0;
+  }
+
+  .stat-card small {
+    font-size: 8px;
+  }
+
+  .panel {
+    min-width: 0;
+    padding: 15px;
+  }
+
+  .panel-heading {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .chart-panel .panel-heading h2 {
+    font-size: 13px;
+  }
+
+  .chart-panel .panel-heading select {
+    max-width: 102px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

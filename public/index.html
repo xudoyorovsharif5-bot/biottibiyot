@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Biotibbiyot — ilm-fan, tibbiyot va biotexnologiya olamidagi yangiliklar.">
+  <meta name="theme-color" content="#102b46">
+  <title>Biotibbiyot — Ilm-fan va tibbiyot portali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=5">
+  <link rel="stylesheet" href="/polish.css?v=7">
+</head>
+<body>
+  <div class="topline"><div class="wrap topline-inner"><span data-i18n="topline">ILM-FAN • TIBBIYOT • TEXNOLOGIYA</span><span class="date" id="today"></span></div></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#" aria-label="Biotibbiyot bosh sahifa">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4v32M4 20h32M9 9l22 22M31 9 9 31" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></span>
+        <span class="brand-name">BIO<span>TIBBIYOT</span><small>SCIENCE & HEALTH JOURNAL</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Asosiy navigatsiya">
+        <a class="active" href="#home" data-i18n="navHome">Bosh sahifa</a>
+        <a href="#latest" data-i18n="navNews">Yangiliklar</a>
+        <a href="#research" data-i18n="navResearch">Tadqiqotlar</a>
+        <a href="#categories" data-i18n="navBiotech">Biotexnologiya</a>
+        <a href="#about" data-i18n="navAbout">Loyiha haqida</a>
+      </nav>
+      <div class="header-actions">
+        <div class="languages" aria-label="Tilni tanlash">
+          <button class="lang active" data-lang="uz">UZ</button><button class="lang" data-lang="ru">RU</button><button class="lang" data-lang="en">EN</button>
+        </div>
+        <button class="icon-btn" id="searchToggle" aria-label="Qidiruvni ochish"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="search-panel wrap" id="searchPanel"><input id="searchInput" type="search" placeholder="Maqola yoki mavzuni qidiring..." data-i18n-placeholder="searchPlaceholder"><span id="searchCount"></span></div>
+  </header>
+
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span><span data-i18n="heroEyebrow">BILIM • KASHFIYOT • KELAJAK</span></div>
+        <h1 data-i18n="heroTitle">Inson salomatligi<br><em>ilm-fan bilan</em> boshlanadi.</h1>
+        <p data-i18n="heroText">Biotibbiyot, zamonaviy tibbiyot va hayot fanlari olamidagi muhim yangiliklar, tadqiqotlar va kashfiyotlar bir manzilda.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#latest" data-i18n="heroButton">Maqolalarni o‘qish <span>↗</span></a><span class="hero-note" data-i18n="heroNote">Ishonchli bilim. Keng dunyoqarash.</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image"></div>
+        <div class="image-shade"></div>
+        <div class="hero-label"><span class="label-dot"></span><span data-i18n="heroImageLabel">FAN VA INNOVATSIYA</span></div>
+        <div class="hero-stat"><strong>01</strong><span data-i18n="heroStat">Ilmiy qarash<br>yangi imkoniyatlar sari</span></div>
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="ticker"><div class="wrap ticker-inner"><strong data-i18n="tickerLabel">MUHIM MAVZULAR</strong><span data-i18n="tickerItems">Biotibbiyot <i>•</i> Genetika <i>•</i> Klinik tadqiqotlar <i>•</i> Biotexnologiya <i>•</i> Sog‘liqni saqlash</span><span class="ticker-arrow">↗</span></div></section>
+
+    <section class="content-section wrap" id="latest">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="latestEyebrow">BIZNING TANLOV</span></div><h2 data-i18n="latestTitle">So‘nggi maqolalar</h2></div><a class="text-link" href="#latest" data-i18n="allArticles">Barcha maqolalar <span>↗</span></a></div>
+      <div class="category-row" id="categories">
+        <button class="category active" data-category="all" data-i18n="catAll">Barchasi</button>
+        <button class="category" data-category="biomed" data-i18n="catBiomed">Biotibbiyot</button>
+        <button class="category" data-category="medicine" data-i18n="catMedicine">Tibbiyot</button>
+        <button class="category" data-category="research" data-i18n="catResearch">Tadqiqotlar</button>
+        <button class="category" data-category="biotech" data-i18n="catBiotech">Biotexnologiya</button>
+      </div>
+      <div class="article-grid" id="articleGrid">
+        <article class="article-card featured-card" data-category="research" data-search="genomika genetika tadqiqot">
+          <a class="article-image image-one" href="#article-1" aria-label="Genomika maqolasi"><span class="article-tag" data-i18n="tagResearch">TADQIQOT</span><span class="image-index">01 / 04</span></a>
+          <div class="article-body"><div class="article-meta"><span data-i18n="metaResearch">ILMIY TADQIQOT</span><span>•</span><span>6 MIN</span></div><h3 data-i18n="article1Title">Genomika: tibbiyotning kelajagini o‘zgartirayotgan yo‘nalish</h3><p data-i18n="article1Text">Genetik ma’lumotlar kasalliklarni erta aniqlash va shaxsiylashtirilgan davolash imkoniyatlarini kengaytirmoqda.</p><a class="read-link" href="#article-1" data-i18n="readMore">Batafsil o‘qish <span>→</span></a></div>
+        </article>
+        <article class="article-card" data-category="biotech" data-search="biotexnologiya hujayra laboratoriya">
+          <a class="article-image image-two" href="#article-2" aria-label="Biotexnologiya maqolasi"><span class="article-tag" data-i18n="tagBiotech">BIOTEXNOLOGIYA</span><span class="image-index">02 / 04</span></a>
+          <div class="article-body"><div class="article-meta"><span data-i18n="metaInnovation">INNOVATSIYA</span><span>•</span><span>4 MIN</span></div><h3 data-i18n="article2Title">Hujayra texnologiyalari va yangi davolash usullari</h3><p data-i18n="article2Text">Laboratoriya yutuqlari regenerativ tibbiyot uchun yangi istiqbollarni ochmoqda.</p><a class="read-link" href="#article-2" data-i18n="readMore">Batafsil o‘qish <span>→</span></a></div>
+        </article>
+        <article class="article-card" data-category="medicine" data-search="tibbiyot raqamli diagnostika suniy intellekt">
+          <a class="article-image image-three" href="#article-3" aria-label="Raqamli tibbiyot maqolasi"><span class="article-tag" data-i18n="tagMedicine">TIBBIYOT</span><span class="image-index">03 / 04</span></a>
+          <div class="article-body"><div class="article-meta"><span data-i18n="metaAnalysis">TAHLIL</span><span>•</span><span>5 MIN</span></div><h3 data-i18n="article3Title">Raqamli diagnostika: aniqlik va tezkorlik uyg‘unligi</h3><p data-i18n="article3Text">Tibbiyotda ma’lumotlar tahlili va aqlli tizimlarning o‘rni tobora ortib bormoqda.</p><a class="read-link" href="#article-3" data-i18n="readMore">Batafsil o‘qish <span>→</span></a></div>
+        </article>
+        <article class="article-card" data-category="biomed" data-search="biotibbiyot molekulyar biologiya">
+          <a class="article-image image-four" href="#article-4" aria-label="Molekulyar biologiya maqolasi"><span class="article-tag" data-i18n="tagBiomed">BIOTIBBIYOT</span><span class="image-index">04 / 04</span></a>
+          <div class="article-body"><div class="article-meta"><span data-i18n="metaOverview">SHARH</span><span>•</span><span>7 MIN</span></div><h3 data-i18n="article4Title">Molekulyar biologiya: tiriklik sirlarini anglash</h3><p data-i18n="article4Text">Molekulyar darajadagi bilimlar zamonaviy biologiya va tibbiyotning muhim asosidir.</p><a class="read-link" href="#article-4" data-i18n="readMore">Batafsil o‘qish <span>→</span></a></div>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState" hidden data-i18n="empty">Bu so‘rov bo‘yicha maqola topilmadi.</div>
+    </section>
+
+    <section class="research-band" id="research"><div class="wrap research-inner"><div><div class="eyebrow light"><span class="eyebrow-line"></span><span data-i18n="researchEyebrow">ILMGA E'TIBOR</span></div><h2 data-i18n="researchTitle">Murakkab fan. Tushunarli<br><em>va ishonchli</em> yondashuv.</h2><p data-i18n="researchText">Maqsadimiz — ilmiy bilimlarni keng auditoriyaga aniq, mas’uliyatli va tushunarli shaklda yetkazish.</p></div><div class="research-symbol"><div class="symbol-ring"></div><div class="symbol-cross">✣</div><span>BIOMED<br>SCIENCE</span></div></div></section>
+
+    <section class="newsletter wrap" id="about"><div><div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="newsletterEyebrow">BIZ BILAN QOLING</span></div><h2 data-i18n="newsletterTitle">Ilm-fan yangiliklaridan<br>xabardor bo‘ling.</h2></div><form id="newsletterForm"><label for="email" data-i18n="emailLabel">Elektron pochta manzilingiz</label><div class="email-row"><input id="email" type="email" required placeholder="name@example.com"><button class="btn btn-primary" type="submit" data-i18n="subscribe">Obuna bo‘lish ↗</button></div><small id="formMessage" data-i18n="newsletterNote">Hozircha namuna forma. Obuna xizmati backend ulangach ishga tushadi.</small></form></section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-top"><a class="brand brand-footer" href="#"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 4v32M4 20h32M9 9l22 22M31 9 9 31" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></span><span class="brand-name">BIO<span>TIBBIYOT</span><small>SCIENCE & HEALTH JOURNAL</small></span></a><p data-i18n="footerText">Ilmiy bilim va salomatlik kelajagi haqida.</p><span class="copyright">© 2026 BIOTIBBIYOT</span></div></footer>
+  <dialog class="article-detail" id="articleDetail">
+    <button class="detail-close" id="detailClose" type="button" aria-label="Yopish">×</button>
+    <div class="detail-image" id="detailImage"></div>
+    <div class="detail-content">
+      <div class="detail-meta" id="detailMeta"></div>
+      <h2 id="detailTitle"></h2>
+      <p class="detail-lead" id="detailLead"></p>
+      <div class="detail-body" id="detailBody"></div>
+    </div>
+  </dialog>
+  <script src="/app.js?v=7"></script>
+</body>
+</html>
