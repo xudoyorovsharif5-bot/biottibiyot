@@ -1,6 +1,6 @@
 # Biotibbiyot
 
-Express.js asosidagi biotibbiyot ma'lumotlar portali.
+Express.js asosidagi biotibbiyot ma’lumotlar portali.
 
 ## Ishga tushirish
 
