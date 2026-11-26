@@ -202,6 +202,7 @@ app.get(["/admin", "/admin.html", "/admin.js", "/admin.css"], requireAdmin, (req
   if (req.path === "/admin" || req.path === "/admin.html") return res.sendFile(path.join(__dirname, "public", "admin.html"));
   res.sendFile(path.join(__dirname, "public", req.path.slice(1)));
 });
+app.get("/", (_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(PORT, () => {
