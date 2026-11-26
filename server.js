@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_USER = process.env.ADMIN_USER;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const sessions = new Map();
+const CANONICAL_HOST = "biotibbiyot.onrender.com";
 const articlePool = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL })
   : null;
@@ -32,6 +33,12 @@ if (!ADMIN_USER || !ADMIN_PASSWORD) {
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json({ limit: "3mb" }));
+app.use((req, res, next) => {
+  if (req.hostname === "biottibiyot.onrender.com") {
+    return res.redirect(308, `https://${CANONICAL_HOST}${req.originalUrl}`);
+  }
+  next();
+});
 
 function readArticles() {
   if (!fs.existsSync(ARTICLES_FILE)) {
@@ -182,6 +189,7 @@ function requireAdminApi(req, res, next) {
 
 app.get("/health", (_req, res) => res.json({ status: "ok", app: "Biotibbiyot" }));
 app.get("/api/articles", async (_req, res) => {
+  res.set("Cache-Control", "no-store");
   try {
     res.json(await listArticles());
   } catch (error) {
